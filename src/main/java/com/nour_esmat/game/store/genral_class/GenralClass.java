@@ -20,5 +20,8 @@ public class GenralClass {
     // private String createdBy;
     // private String updatedBy;
     // private String createdAt;
+    // private String updatedAt; // private String createdBy;
+    // private String updatedBy;
+    // private String createdAt;
     // private String updatedAt;
 }
