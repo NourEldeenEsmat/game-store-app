@@ -1,7 +1,10 @@
 package com.nour_esmat.game.store.notification;
 
-import com.nour_esmat.game.store.genral_class.GenralClass;
+import com.nour_esmat.game.store.genral_class.GeneraleClass;
 
+import com.nour_esmat.game.store.user.User;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,9 +14,12 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Notification extends GenralClass {
+@Entity
+public class Notification extends GeneraleClass {
     private String message;
-    private String recever;
+    private String receiver;
     private Level level;
     private Status status;
+    @ManyToOne
+    private User user;
 }

@@ -1,8 +1,6 @@
 package com.nour_esmat.game.store.genral_class;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +10,8 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class GenralClass {
+@MappedSuperclass
+public class GeneraleClass {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
