@@ -1,4 +1,4 @@
-package com.nour_esmat.game.store.genral_class;
+package com.nour_esmat.game.store.common;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

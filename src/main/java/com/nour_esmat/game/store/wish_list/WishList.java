@@ -1,7 +1,7 @@
 package com.nour_esmat.game.store.wish_list;
 
 import com.nour_esmat.game.store.game.Game;
-import com.nour_esmat.game.store.genral_class.GeneraleClass;
+import com.nour_esmat.game.store.common.GeneraleClass;
 import com.nour_esmat.game.store.user.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

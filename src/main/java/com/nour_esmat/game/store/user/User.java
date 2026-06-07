@@ -2,7 +2,7 @@ package com.nour_esmat.game.store.user;
 
 import com.nour_esmat.game.store.comment.Comment;
 import com.nour_esmat.game.store.game_request.GameRequest;
-import com.nour_esmat.game.store.genral_class.GeneraleClass;
+import com.nour_esmat.game.store.common.GeneraleClass;
 
 import com.nour_esmat.game.store.notification.Notification;
 import com.nour_esmat.game.store.wish_list.WishList;

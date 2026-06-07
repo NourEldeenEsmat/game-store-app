@@ -2,8 +2,9 @@ package com.nour_esmat.game.store.game;
 
 import com.nour_esmat.game.store.category.Category;
 import com.nour_esmat.game.store.comment.Comment;
-import com.nour_esmat.game.store.genral_class.GeneraleClass;
+import com.nour_esmat.game.store.common.GeneraleClass;
 
+import com.nour_esmat.game.store.platform.Platform;
 import com.nour_esmat.game.store.wish_list.WishList;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,6 +13,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -19,9 +21,11 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 public class Game extends GeneraleClass {
+
+    @Column(unique = true,nullable = false)
     private String title;
-    @Enumerated(EnumType.STRING)
-    private SupportedPlatforms supportedPlatforms;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Platform> platforms;
     private String photoUrl;
     @ManyToOne
     private Category category;

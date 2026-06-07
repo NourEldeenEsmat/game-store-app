@@ -1,6 +1,6 @@
 package com.nour_esmat.game.store.game_request;
 
-import com.nour_esmat.game.store.genral_class.GeneraleClass;
+import com.nour_esmat.game.store.common.GeneraleClass;
 
 import com.nour_esmat.game.store.user.User;
 import jakarta.persistence.Entity;
