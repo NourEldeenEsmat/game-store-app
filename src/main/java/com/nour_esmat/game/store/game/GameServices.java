@@ -1,5 +1,6 @@
 package com.nour_esmat.game.store.game;
 
+import com.nour_esmat.game.store.category.CategoryRepository;
 import com.nour_esmat.game.store.common.PageResponse;
 import com.nour_esmat.game.store.platform.Console;
 import com.nour_esmat.game.store.platform.Platform;
@@ -19,6 +20,8 @@ public class GameServices {
     private final GameMapper gameMapper;
     private final PlatformRepo platformRepo;
 
+    private final CategoryRepository categoryRepository;
+
     public String addGame(RequestedGame game) {
         if (gameRepo.existsByTitle(game.name()))
             throw new RuntimeException("the game already exist");
@@ -28,7 +31,13 @@ public class GameServices {
                 game.platformSet().stream().map(Console::valueOf)
                         .collect(Collectors.toSet());
         platformRepo.findAllByConsoleIn(selectedConsole);
-        return null;
+        if (!categoryRepository.existsById(game.categoryId())){
+            throw new RuntimeException("the game category is not exist");
+        }
+        Game newGame = gameMapper.toGame(game);
+        newGame.setPlatforms(platformSet);
+        Game savedGame = gameRepo.save(newGame);
+        return savedGame.getId();
     }
 
     public void updateGame(String id, RequestedGame game) {

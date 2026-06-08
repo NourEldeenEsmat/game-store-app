@@ -4,7 +4,7 @@ import java.util.Set;
 
 public record RequestedGame(
         String name,
-        String category,
+        String categoryId,
         Set<String> platformSet
 ) {
 
