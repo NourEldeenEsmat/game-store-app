@@ -1,7 +1,7 @@
 package com.nour_esmat.game.store.user;
 
 import com.nour_esmat.game.store.comment.Comment;
-import com.nour_esmat.game.store.game_request.GameRequest;
+import com.nour_esmat.game.store.game_request.RequestGame;
 import com.nour_esmat.game.store.common.GeneraleClass;
 
 import com.nour_esmat.game.store.notification.Notification;
@@ -29,7 +29,7 @@ public class User extends GeneraleClass {
     @OneToMany(mappedBy = "user")
     private List<Notification> notifications;
     @OneToMany(mappedBy = "user")
-    private List<GameRequest> gameRequests;
+    private List<RequestGame> requestAGames;
     @OneToMany(mappedBy = "user")
     private List<Comment> comments;
 }

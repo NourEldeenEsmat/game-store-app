@@ -21,6 +21,6 @@ import java.util.Set;
 public class Platform extends GeneraleClass {
     @Enumerated(EnumType.STRING)
     private Console console;
-    @ManyToMany
+    @ManyToMany(mappedBy = "platforms")
     private Set<Game> games;
 }

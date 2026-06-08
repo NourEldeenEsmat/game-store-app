@@ -9,7 +9,7 @@ import java.util.Set;
 public interface PlatformRepo extends JpaRepository<Platform,String> {
 
     @Query("""
-            select p from platform p
+            select p from Platform p
             where p.console in :consoles
             """)
     Set<Platform> findAllByConsoleIn(@Param("consoles") Set<Console> selectedConsole);

@@ -26,7 +26,7 @@ public class Game extends GeneraleClass {
 
     @Column(unique = true,nullable = false)
     private String title;
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE},fetch = FetchType.EAGER)
     private Set<Platform> platforms;
     private String photoUrl;
     @ManyToOne
@@ -45,9 +45,16 @@ public class Game extends GeneraleClass {
         this.wishLists.add(wishList);
         wishList.getGames().add(this);
     }
-
     public void removeWishlist(WishList wishList){
         this.wishLists.remove(wishList);
         wishList.getGames().remove(this);
+    }
+    public void addPlatform(Platform platform){
+        this.platforms.add(platform);
+        platform.getGames().add(this);
+    }
+    public void deletePlatform(Platform platform){
+        this.platforms.remove(platform);
+        platform.getGames().remove(this);
     }
 }

@@ -15,7 +15,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-public class GameRequest extends GeneraleClass {
+public class RequestGame extends GeneraleClass {
     private String title;
     private Status status;
     @ManyToOne
